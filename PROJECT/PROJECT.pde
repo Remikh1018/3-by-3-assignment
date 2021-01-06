@@ -11,6 +11,7 @@ float button1X, button1Y, button1Width, button1Height;
 float button2X, button2Y, button2Width, button2Height;
 float button3X, button3Y, button3Width, button3Height;
 float button4X, button4Y, button4Width, button4Height;
+float button5X, button5Y, button5Width, button5Height;
 
 void setup() {
   size(500, 600);
@@ -103,6 +104,9 @@ void draw() {
     fill(Black);
     rect(button4X, button4Y, button4Width, button4Height);
   }
+  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
+    fill(Black);
+    rect(button5X, button5Y, button5Width, button5Height);
   fill(Black); //Reset all IF-ELSE
   //
   ellipse(pt1X, pt1Y, ptDiameter, ptDiameter);
@@ -123,10 +127,9 @@ void draw() {
   ellipse(pt14X, pt14Y, ptDiameter, ptDiameter);
   ellipse(pt15X, pt15Y, ptDiameter, ptDiameter);
   ellipse(pt16X, pt16Y, ptDiameter, ptDiameter);
-  fill(white);
-}
-
-void mousePressed() {
+  fill(white); {
+  
+  void mousePressed() {
   if ( mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) {
     println("Btn 1 activated");
     turnOnYellow = true;
@@ -141,8 +144,9 @@ void mousePressed() {
   }
   if ( mouseX>=button4X && mouseX<=button4X+button4Width && mouseY>=button4Y && mouseY<=button4Y+button4Height) {
     println("Btn 4 activated");
+  }
+  if ( mouseX>=button5X && mouseX<=button5X+button5Width && mouseY>=button5Y && mouseY<=button5Y+button5Height) {
+    println("Btn 4 activated");
     turnOnYellow = false;
     turnOnBlack = false;
-    turnOnGreen = false;
   }
-}
